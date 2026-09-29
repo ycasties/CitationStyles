@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-US">
   <info>
-    <title>Journal of Medical Internet Research</title>
+    <title>JMIR mHealth and uHealth Custom</title>
     <title-short>JMIR</title-short>
-    <id>http://www.zotero.org/styles/journal-of-medical-internet-research</id>
+    <id>http://www.zotero.org/styles/jmir-mhealth-and-uhealth-custom-mendeley</id>
     <link href="http://www.zotero.org/styles/journal-of-medical-internet-research" rel="self"/>
     <link href="http://www.zotero.org/styles/nlm-citation-sequence-superscript" rel="template"/>
     <link href="http://www.jmir.org/cms/view/Instructions_for_Authors:Instructions_for_Authors_of_JMIR#References" rel="documentation"/>
