@@ -7,12 +7,12 @@
   <info>
     <title>JMIR mHealth and uHealth Custom</title>
     <title-short>JMIR Custom</title-short>
-    <id>http://www.zotero.org/styles/jmir-mhealth-custom</id>
-    <link href="https://mhealth.jmir.org/" rel="self"/>
+    <id>https://www.zotero.org/styles/jmir-mhealth-custom</id>
+    <link href="https://mhealth.jmir.org/" rel="documentation"/>
     <updated>2026-09-29T00:00:00+00:00</updated>
   </info>
 
-  <citation collapse="citation-number">
+  <citation>
     <layout prefix="[" suffix="]" delimiter=",">
       <text variable="citation-number"/>
     </layout>
@@ -20,98 +20,52 @@
 
   <bibliography et-al-min="7"
                 et-al-use-first="6"
-                entry-spacing="0"
                 hanging-indent="true">
 
-    <sort>
-      <key variable="citation-number"/>
-    </sort>
+    <layout>
 
-    <layout suffix=".">
+      <text variable="citation-number"
+            suffix=". "/>
 
-      <text variable="citation-number" suffix=". "/>
+      <names variable="author"
+             suffix=". ">
 
-      <names variable="author" suffix=". ">
         <name name-as-sort-order="all"
               sort-separator=" "
               initialize-with=""
               delimiter=", "
               delimiter-precedes-et-al="always"/>
+
         <et-al/>
+
       </names>
 
       <text variable="title"
             text-case="sentence"
             suffix=". "/>
 
-      <choose>
+      <text variable="container-title"
+            suffix=". "/>
 
-        <if type="article-journal">
+      <date variable="issued"
+            suffix=";">
 
-          <text variable="container-title-short"/>
+        <date-part name="month"
+                   form="short"/>
 
-          <date variable="issued" prefix=". ">
-            <date-part name="month" form="short"/>
-            <date-part name="year" prefix=" "/>
-          </date>
+        <date-part name="year"
+                   prefix=" "/>
 
-          <text variable="volume"/>
+      </date>
 
-          <text variable="issue"
-                prefix="("
-                suffix=")"/>
+      <text variable="volume"/>
 
-          <text variable="page"
-                prefix=":"/>
+      <text variable="issue"
+            prefix="("
+            suffix=")"/>
 
-        </if>
-
-        <else-if type="paper-conference">
-
-          <text variable="container-title"
-                suffix=". "/>
-
-          <date variable="issued">
-            <date-part name="year"/>
-          </date>
-
-          <text variable="page"
-                prefix=":"/>
-
-        </else-if>
-
-        <else-if type="book">
-
-          <text variable="publisher-place"
-                prefix=". "
-                suffix=":"/>
-
-          <text variable="publisher"
-                prefix=" "
-                suffix=";"/>
-
-          <date variable="issued"
-                prefix=" ">
-            <date-part name="year"/>
-          </date>
-
-        </else-if>
-
-        <else>
-
-          <text variable="container-title"
-                suffix=". "/>
-
-          <date variable="issued">
-            <date-part name="year"/>
-          </date>
-
-          <text variable="page"
-                prefix=":"/>
-
-        </else>
-
-      </choose>
+      <text variable="page"
+            prefix=":"/>
 
       <text variable="DOI"
             prefix=". [doi: "
