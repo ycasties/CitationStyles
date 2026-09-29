@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl"
+       version="1.0.2"
+       class="in-text"
+       default-locale="en-US">
+
+  <info>
+    <title>JMIR mHealth and uHealth - Custom Mendeley</title>
+    <title-short>JMIR mHealth Uhealth Custom</title-short>
+    <id>http://www.zotero.org/styles/jmir-mhealth-and-uhealth-custom-mendeley</id>
+    <link href="https://mhealth.jmir.org/" rel="self"/>
+    <updated>2026-09-29T00:00:00+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">
+      Custom style based on JMIR Publications reference-formatting guidance.
+    </rights>
+  </info>
+
+  <locale xml:lang="en">
+    <terms>
+      <term name="et-al">et al.</term>
+    </terms>
+  </locale>
+
+  <!-- CITATIONS IN TEXT -->
+  <citation collapse="citation-number"
+            cite-group-delimiter=",">
+    <layout prefix="[" suffix="]" delimiter=",">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <!-- BIBLIOGRAPHY -->
+  <bibliography et-al-min="7"
+                et-al-use-first="6"
+                second-field-align="flush"
+                entry-spacing="0"
+                line-spacing="1"
+                hanging-indent="true">
+
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+
+    <layout suffix=".">
+
+      <!-- Reference number -->
+      <text variable="citation-number" suffix=". "/>
+
+      <!-- AUTHORS -->
+      <names variable="author" suffix=". ">
+        <name name-as-sort-order="all"
+              sort-separator=" "
+              initialize-with=""
+              delimiter=", "
+              delimiter-precedes-et-al="always"
+              et-al-min="7"
+              et-al-use-first="6"/>
+        <et-al font-style="normal"/>
+      </names>
+
+      <!-- TITLE -->
+      <text variable="title"
+            text-case="sentence"
+            suffix=". "/>
+
+      <choose>
+
+        <!-- JOURNAL ARTICLES -->
+        <if type="article-journal article-magazine article-newspaper"
+            match="any">
+
+          <!-- Prefer abbreviated journal title -->
+          <choose>
+            <if variable="container-title-short">
+              <text variable="container-title-short"/>
+            </if>
+            <else>
+              <text variable="container-title"/>
+            </else>
+          </choose>
+
+          <!-- Month + year only -->
+          <date variable="issued" prefix=". ">
+            <date-part name="month" form="short"/>
+            <date-part name="year" prefix=" "/>
+          </date>
+
+          <!-- Volume(issue):pages -->
+          <group delimiter="">
+            <text variable="volume"/>
+            <text variable="issue"
+                  prefix="("
+                  suffix=")"/>
+            <text variable="page"
+                  prefix=":"/>
+          </group>
+
+        </if>
+
+        <!-- CONFERENCE PAPERS -->
+        <else-if type="paper-conference" match="any">
+
+          <text variable="container-title"
+                suffix=". "/>
+
+          <date variable="issued">
+            <date-part name="year"/>
+          </date>
+
+          <text variable="page"
+                prefix=":"/>
+
+        </else-if>
+
+        <!-- BOOKS -->
+        <else-if type="book" match="any">
+
+          <text variable="edition"
+                prefix=". "
+                suffix=" edition"/>
+
+          <text variable="publisher-place"
+                prefix=". "
+                suffix=":"/>
+
+          <text variable="publisher"
+                prefix=" "
+                suffix=";"/>
+
+          <date variable="issued"
+                prefix=" ">
+            <date-part name="year"/>
+          </date>
+
+        </else-if>
+
+        <!-- BOOK CHAPTERS -->
+        <else-if type="chapter" match="any">
+
+          <text variable="container-title"
+                prefix=" In: "
+                suffix=". "/>
+
+          <text variable="publisher-place"
+                suffix=":"/>
+
+          <text variable="publisher"
+                prefix=" "
+                suffix=";"/>
+
+          <date variable="issued"
+                prefix=" ">
+            <date-part name="year"/>
+          </date>
+
+          <text variable="page"
+                prefix=":"/>
+
+        </else-if>
+
+        <!-- WEB / REPORT / THESIS -->
+        <else-if type="webpage report thesis" match="any">
+
+          <text variable="publisher"
+                suffix=". "/>
+
+          <date variable="issued">
+            <date-part name="year"/>
+          </date>
+
+          <text variable="URL"
+                prefix=". "/>
+
+          <date variable="accessed"
+                prefix=" [accessed ">
+
+            <date-part name="month"
+                       form="short"
+                       suffix=" "/>
+
+            <date-part name="day"
+                       suffix=", "/>
+
+            <date-part name="year"/>
+
+          </date>
+
+          <text value="]"/>
+
+        </else-if>
+
+        <!-- FALLBACK -->
+        <else>
+
+          <choose>
+            <if variable="container-title-short">
+              <text variable="container-title-short"/>
+            </if>
+            <else>
+              <text variable="container-title"/>
+            </else>
+          </choose>
+
+          <date variable="issued"
+                prefix=". ">
+            <date-part name="year"/>
+          </date>
+
+          <text variable="page"
+                prefix=":"/>
+
+        </else>
+
+      </choose>
+
+      <!-- DOI -->
+      <text variable="DOI"
+            prefix=". [doi: "
+            suffix="]"/>
+
+      <!-- PMID / MEDLINE -->
+      <text variable="PMID"
+            prefix=" [Medline: "
+            suffix="]"/>
+
+      <!-- ISBN -->
+      <text variable="ISBN"
+            prefix=" [ISBN: "
+            suffix="]"/>
+
+    </layout>
+
+  </bibliography>
+
+</style>
